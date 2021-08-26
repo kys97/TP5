@@ -1,0 +1,16 @@
+{
+    "name": "CAH.UnityGoogleSheets.Editor",
+    "rootNamespace": "",
+    "references": [
+        "CAH.UnityGoogleSheets"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
