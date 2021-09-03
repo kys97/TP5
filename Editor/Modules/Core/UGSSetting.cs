@@ -39,11 +39,11 @@ namespace UGS.Editor
 
         public void OnEnable()
         {
-            _googleScriptURL ??= UGSettingObjectWrapper.ScriptURL;
-            _password ??= UGSettingObjectWrapper.ScriptPassword;
-            _googleFolderId ??= UGSettingObjectWrapper.GoogleFolderID;
-            _generateCodePath ??= UGSettingObjectWrapper.GenerateCodePath;
-            _jsonDataPath ??= UGSettingObjectWrapper.JsonDataPath;
+            _googleScriptURL = UGSettingObjectWrapper.ScriptURL;
+            _password = UGSettingObjectWrapper.ScriptPassword;
+            _googleFolderId = UGSettingObjectWrapper.GoogleFolderID;
+            _generateCodePath = UGSettingObjectWrapper.GenerateCodePath;
+            _jsonDataPath = UGSettingObjectWrapper.JsonDataPath;
         }
 
         public void EditorPrefsToggle(string id)

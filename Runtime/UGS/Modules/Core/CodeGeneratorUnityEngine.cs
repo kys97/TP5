@@ -203,7 +203,7 @@ namespace @namespace
                             Debug.LogError($"<color=#00ff00><b>error field =>:</b></color> {targetField} : {sheetInfo.sheetTypes[i]}");
                             throw new GoogleSheet.Exception.TypeParserNotFoundException("Type Parser Not Found, You made your own type parser? check custom type document on gitbook document.");
                         }
-                        builder.AppendLine($"\t\tpublic {GetCSharpRepresentation(TypeMap.StrMap[types[i]], true)} {fieldNames[i]};");
+                        builder.AppendLine($"\t\tpublic {outType.Namespace}.{GetCSharpRepresentation(TypeMap.StrMap[types[i]], true)} {fieldNames[i]};");
                     }
                     else
                     {
@@ -450,9 +450,11 @@ else
             WriteAssembly(new string[] {
                 "GoogleSheet.Protocol.v2.Res",
                 "GoogleSheet.Protocol.v2.Req",
-                "UGS", "System", "UGS.IO","GoogleSheet",
+                "UGS", "System",
+                "UGS.IO","GoogleSheet",
                 "System.Collections.Generic",
-                "System.IO", "GoogleSheet.Type",
+                "System.IO", 
+                "GoogleSheet.Type",
                 "System.Reflection",
                 "UnityEngine"}, sheetInfo.sheetTypes, sheetInfo.isEnumChecks);
             WriteNamespace(_namespace, sheetInfo.isEnumChecks, sheetInfo.sheetTypes);

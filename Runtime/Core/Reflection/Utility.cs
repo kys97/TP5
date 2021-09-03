@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,5 +23,13 @@ namespace GoogleSheet.Reflection
             return types;
         }
 
+
+        public static string TypeNameWithNamespace(System.Type type)
+        {
+            if (string.IsNullOrEmpty(type.Namespace)) 
+                return type.Name;
+            else 
+                return $"{type.Namespace}.{type.Name}";
+        }
     }
 }

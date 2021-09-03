@@ -16,7 +16,7 @@ namespace UGS
                 UGSettingObject setting = Resources.Load<UGSettingObject>("UGSettingObject");
                 if (setting == null)
                 {
-                    throw new System.Exception("Cannot Find UG/Resources/UGSettingObject.asset file, Setting Object is null!, please check or complate <color=#00ff00><b>HamsterLib -> UGS -> UGSetting</b></color>");
+                    throw new System.Exception("Cannot Find UG/Resources/UGSettingObject.asset file, Setting Object is null!, please check <color=#00ff00><b>HamsterLib -> UGS -> UGSetting</b></color>");
                 }
                 return setting.GoogleFolderID;
 #endif
@@ -28,7 +28,7 @@ namespace UGS
                 UGSettingObject setting = Resources.Load<UGSettingObject>("UGSettingObject");
                 if (setting == null)
                 {
-                    throw new System.Exception("Cannot Find UG/Resources/UGSettingObject.asset file, Setting Object is null!, please check or complate <color=#00ff00><b>HamsterLib -> UGS -> UGSetting</b></color>");
+                    throw new System.Exception("Cannot Find UG/Resources/UGSettingObject.asset file, Setting Object is null!, please check  <color=#00ff00><b>HamsterLib -> UGS -> UGSetting</b></color>");
                 }
                 setting.GoogleFolderID = value;
 #endif
@@ -47,7 +47,7 @@ namespace UGS
                 UGSettingObject setting = Resources.Load<UGSettingObject>("UGSettingObject");
                 if (setting == null)
                 { 
-                    throw new System.Exception("Cannot Find UG/Resources/UGSettingObject.asset file, Setting Object is null!, please check or complate <color=#00ff00><b>HamsterLib -> UGS -> UGSetting</b></color>");
+                    throw new System.Exception("Cannot Find UG/Resources/UGSettingObject.asset file, Setting Object is null!, please check <color=#00ff00><b>HamsterLib -> UGS -> UGSetting</b></color>");
                 }
                 return setting.ScriptURL;
 #endif
@@ -61,7 +61,7 @@ namespace UGS
                 UGSettingObject setting = Resources.Load<UGSettingObject>("UGSettingObject");
                 if (setting == null)
                 {
-                    throw new System.Exception("Cannot Find UG/Resources/UGSettingObject.asset file, Setting Object is null!, please check or complate <color=#00ff00><b>HamsterLib -> UGS -> UGSetting</b></color>");
+                    throw new System.Exception("Cannot Find UG/Resources/UGSettingObject.asset file, Setting Object is null!, please check  <color=#00ff00><b>HamsterLib -> UGS -> UGSetting</b></color>");
                 }
                 setting.ScriptURL = value;
 #endif
@@ -81,7 +81,7 @@ namespace UGS
                 UGSettingObject setting = Resources.Load<UGSettingObject>("UGSettingObject");
                 if (setting == null)
                 {
-                    throw new System.Exception("Cannot Find UG/Resources/UGSettingObject.asset file, Setting Object is null!, please check or complate <color=#00ff00><b>HamsterLib -> UGS -> UGSetting</b></color>");
+                    throw new System.Exception("Cannot Find UG/Resources/UGSettingObject.asset file, Setting Object is null!, please check <color=#00ff00><b>HamsterLib -> UGS -> UGSetting</b></color>");
                 }
                 return setting.ScriptPassword;
 #endif
@@ -95,7 +95,7 @@ namespace UGS
                 UGSettingObject setting = Resources.Load<UGSettingObject>("UGSettingObject");
                 if (setting == null)
                 {
-                    throw new System.Exception("Cannot Find UG/Resources/UGSettingObject.asset file, Setting Object is null!, please check or complate <color=#00ff00><b>HamsterLib -> UGS -> UGSetting</b></color>");
+                    throw new System.Exception("Cannot Find UG/Resources/UGSettingObject.asset file, Setting Object is null!, please check <color=#00ff00><b>HamsterLib -> UGS -> UGSetting</b></color>");
                 }
                 setting.ScriptPassword = value;
 #endif
@@ -114,7 +114,7 @@ namespace UGS
                 UGSettingObject setting = Resources.Load<UGSettingObject>("UGSettingObject");
                 if (setting == null)
                 {
-                    throw new System.Exception("Cannot Find UG/Resources/UGSettingObject.asset file, Setting Object is null!, please check or complate <color=#00ff00><b>HamsterLib -> UGS -> UGSetting</b></color>");
+                    throw new System.Exception("Cannot Find UG/Resources/UGSettingObject.asset file, Setting Object is null!, please check <color=#00ff00><b>HamsterLib -> UGS -> UGSetting</b></color>");
                 }
                 return setting.GenerateCodePath;
             }
@@ -123,7 +123,7 @@ namespace UGS
                 UGSettingObject setting = Resources.Load<UGSettingObject>("UGSettingObject");
                 if (setting == null)
                 {
-                    throw new System.Exception("Cannot Find UG/Resources/UGSettingObject.asset file, Setting Object is null!, please check or complate <color=#00ff00><b>HamsterLib -> UGS -> UGSetting</b></color>");
+                    throw new System.Exception("Cannot Find UG/Resources/UGSettingObject.asset file, Setting Object is null!, please check  <color=#00ff00><b>HamsterLib -> UGS -> UGSetting</b></color>");
                 }
                 setting.GenerateCodePath = value;
 #if UNITY_EDITOR&& !UGS_SECURITY_MODE
@@ -140,7 +140,7 @@ namespace UGS
                 UGSettingObject setting = Resources.Load<UGSettingObject>("UGSettingObject");
                 if (setting == null)
                 {
-                    throw new System.Exception("Cannot Find UG/Resources/UGSettingObject.asset file, Setting Object is null!, please check or complate <color=#00ff00><b>HamsterLib -> UGS -> UGSetting</b></color>");
+                    throw new System.Exception("Cannot Find UG/Resources/UGSettingObject.asset file, Setting Object is null!, please check <color=#00ff00><b>HamsterLib -> UGS -> UGSetting</b></color>");
                 }
                 return setting.DataPath;
             }
@@ -149,7 +149,7 @@ namespace UGS
                 UGSettingObject setting = Resources.Load<UGSettingObject>("UGSettingObject");
                 if (setting == null)
                 {
-                    throw new System.Exception("Cannot Find UG/Resources/UGSettingObject.asset file, Setting Object is null!, please check or complate <color=#00ff00><b>HamsterLib -> UGS -> UGSetting</b></color>");
+                    throw new System.Exception("Cannot Find UG/Resources/UGSettingObject.asset file, Setting Object is null!, please check  <color=#00ff00><b>HamsterLib -> UGS -> UGSetting</b></color>");
                 }
                 setting.DataPath = value;
 #if UNITY_EDITOR&& !UGS_SECURITY_MODE

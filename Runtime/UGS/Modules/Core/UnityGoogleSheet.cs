@@ -8,7 +8,7 @@ using UGS.IO;
 using UGS;
 using GoogleSheet.Reflection;
 using System.Collections;
-
+using GoogleSheet.Type;
 #if UNITY_2017_1_OR_NEWER || UNITY_BUILD
 using UnityEngine;
 #endif
@@ -88,7 +88,7 @@ namespace UGS
 
 
 
-      
+#if UNITY_EDITOR
         public static void CopyFolder(string id, System.Action<string> callback)
         {
             if (Application.isEditor)
@@ -101,6 +101,7 @@ namespace UGS
                    });
             }
         }
+#endif
         /// <summary>
         /// Write Your Table Data To GoogleSheet
         /// </summary> 

@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using GoogleSheet.Core.Type;
+using GoogleSheet.Reflection;
 
 namespace GoogleSheet.Type
 { 
@@ -27,10 +28,33 @@ namespace GoogleSheet.Type
             get => _enumMap;
              
         }
-         
-        public static void Init()
+
+
+
+        public static void EnumTypeInjection(System.Type enumType)
         {
-            
+            if (enumType.IsEnum)
+            {
+                var key = enumType.Name;  
+                if (!_enumMap.ContainsKey(key))
+                {
+                    _enumMap.Add(key, new EnumType()
+                    {
+                        EnumName = enumType.Name,
+                        Assembly = enumType.Assembly,
+                        NameSpace = (string.IsNullOrEmpty(enumType.Namespace)) ? null : enumType.Namespace,
+                        Type = enumType
+                    });
+                }
+            }
+            else
+            {
+                UnityEngine.Debug.LogError(enumType +" is not enum!");
+            }
+        } 
+
+        public static void Init()
+        { 
             if (init == false)
             { 
                 var subClassesEnum = GoogleSheet.Reflection.Utility.GetAllSubclassOf(typeof(System.Enum));
@@ -43,12 +67,7 @@ namespace GoogleSheet.Type
                     var att = value.GetCustomAttribute(typeof(UGSAttribute));
                     if (att != null)
                     {
-                        _enumMap.Add(value.Name , new EnumType() { 
-                            Assembly = value.Assembly,
-                            EnumName = value.Name,
-                            NameSpace = (string.IsNullOrEmpty(value.Namespace)) ? null : value.Namespace,
-                            Type = value
-                        }); 
+                        EnumTypeInjection(value);
                     }
                 }
 #if UGS_DEBUG

@@ -1,6 +1,6 @@
 {
   "name": "com.cheeseallergyhamster.ugs",
-  "version": "1.0.4",
+  "version": "1.0.0",
   "displayName": "UnityGoogleSheets",
   "description": "This is an example package",
   "unity": "2020.1",

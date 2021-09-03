@@ -104,6 +104,8 @@ namespace UGS.Editor
         {
             Folder, ParentFolder, Excel, Unknown
         }
+        
+        [System.Serializable]
         public class FileData
         {
             public FileType type;
@@ -120,15 +122,21 @@ namespace UGS.Editor
             }
         }
 
-        private readonly List<(string, System.Action)> _topMenus = new List<(string, System.Action)>()
+        private  List<(string, System.Action)> _topMenus = new List<(string, System.Action)>()
         {   
             ("Open",()=>{ Application.OpenURL($"https://drive.google.com/drive/folders/" + currentViewFolderId); }),
             ("Generate",Generate),
+            ("Refresh", () =>
+            { 
+                GoogleDriveExplorerGUI.instance.loadedFileData.Clear();
+                GoogleDriveExplorerGUI.instance.CreateFileDatas(UGSettingObjectWrapper.GoogleFolderID);
+            }),
             ("Setting",Setting),
             ("Document",Document),
         };
 
-        public static List<FileData> loadedFileData = new List<FileData>();
+        [SerializeField]
+        public List<FileData> loadedFileData = new List<FileData>();
         public static GoogleDriveExplorerGUI Instance
         {
             get
@@ -215,7 +223,7 @@ namespace UGS.Editor
             GoogleSheet.GoogleSpreadSheets.Init(new UnityGSParser(), new UnityFileReader());
             if (Application.isPlaying == false)
             {
-                foreach (var file in loadedFileData)
+                foreach (var file in GoogleDriveExplorerGUI.GetWindow<GoogleDriveExplorerGUI>().loadedFileData)
                 {
                     if (file.type == FileType.Excel)
                     {
@@ -373,6 +381,10 @@ namespace UGS.Editor
             EditorGUILayout.EndHorizontal();
         }
 
+
+        public void Refresh()
+        { 
+        }
         public void OnFocus()
         {
             if (loadedFileData.Count == 0)

@@ -111,7 +111,7 @@ namespace UGS
                 
 
                 errCallback?.Invoke(e);
-                Debug.LogError(e);
+                Debug.LogError(e);  
             }
         }
 
